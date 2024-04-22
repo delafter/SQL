@@ -43,9 +43,12 @@ class People(Base):
 
 class favoritos(Base):
     __tablename__ = 'favoritos'
-   
     id = Column(Integer, primary_key=True)
     usuario_id = Column(Integer, ForeignKey('usuario.id'))
+    planetas = relationship("Planets")
+    naves_estelares = relationship("Starships")
+    personas = relationship("People")
+    
 
 
 
